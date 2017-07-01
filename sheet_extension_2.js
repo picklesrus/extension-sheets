@@ -14,7 +14,7 @@ new (function() {
     ext._shutdown = function() {};
 
     // Status reporting code
-    // Use this to report missing hardware, plugin or unsupported browser
+    // Use this  to report missing hardware, plugin or unsupported browser
     ext._getStatus = function() {
         return {status: 2, msg: 'Ready'};
     };
@@ -51,14 +51,14 @@ new (function() {
         // -1 so since rows in the actual spreadsheet start at 1.
         currentRow_ = rowNum - 1;
     };
-    
+
     ext.set_column = function(columnNum, callback) {
         // Convert from letter to array index.  Subtract 10 instead of 9
         // since the columns are 1 indexed.
         // TODO: handle parsing after column Z (e.g. CC)
         var temp = parseInt(columnNum, 36) - 10;
         currentColumn_ = temp;
-        
+
     };
     ext.num_cols = function(callback) {
         if (!fetchedSheet_) {
